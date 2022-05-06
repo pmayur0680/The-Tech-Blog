@@ -7,7 +7,10 @@ router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll();
     const posts = postData.map((post) => {return post.get({ plain: true})})
-    res.render('all-posts', { posts });
+    res.render('all-posts', { 
+      posts,
+      loggedIn: req.session.loggedIn,
+     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -19,7 +22,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
  try {
   const postData = await Post.findByPk(req.params.id);
   const post = postData.get({ plain: true });
-  res.render('single-post', { post });
+  res.render('single-post', { post, loggedIn: req.session.loggedIn });
 
  } catch (err) {
   console.log(err);
