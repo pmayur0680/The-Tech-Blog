@@ -22,7 +22,23 @@
   </header>
 
   <main class="col-auto">
-    {{{body}}}
+    {{!-- {{{body}}} --}}
+    <ul class="list-group">
+      {{#each posts as |post|}}
+      <li class="list-item">
+        <div class="flex-row justify-space-between">
+          <div class="flex-column">
+          {{title}}    
+          </div>
+          <div class="flex-column">
+          {{createdAt}}
+          </div>
+        </div>        
+        
+        </li>    
+      {{/each}}
+    </ul>
+    
   </main>
 
   <footer class="footer flex-row justify-center">
