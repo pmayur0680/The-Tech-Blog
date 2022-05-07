@@ -11,15 +11,30 @@
     </div>
     <div class="card-body">{{post.body}}</div>
 </div>
+{{#if post.Comments}}
+ {{#each post.Comments as |comment|}}
+<div class="post card">
+  <div class="card-header"></div> 
+        <div class="flex-row">      
+        <div class="flex-column post-description">
+          <p>{{comment.body}}</p>
+          <p>{{comment.User.username}} , {{format_date comment.createdAt}}</p>
+        </div>
+    </div>          
+</div>
+ {{/each}}
+{{/if}}
+{{#if loggedIn}}
 <div class="post card">
     <h2 class="card-header"></h2>
     <form id="new-comment-form" class="card-body"> 
         <input type="hidden" name="post-id" value="{{post.id}}">     
       <div>
         <label for="post-body" class="form-label">Comment</label>
-        <textarea name="comment-body" class="form-input form-textarea"></textarea>
+        <textarea name="post-body" class="form-input form-textarea"></textarea>
       </div>
       <button type="submit" class="btn" >Create Post</button>
     </form>  
 </div>
 <script src="/js/comment.js"></script>
+{{/if}}
