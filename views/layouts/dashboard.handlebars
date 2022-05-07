@@ -29,8 +29,9 @@
     <ul class="list-group">
       {{#each posts as |post|}}
       <li class="list-item">
-        <div class="flex-row justify-space-between">
-          <div class="flex-column link-hand" onclick="location.href='/dashboard/edit/{{id}}'">
+        <div class="flex-row justify-space-between link-hand" 
+            onclick="location.href='/dashboard/edit/{{id}}'">
+          <div class="flex-column">
           {{title}}
           </div>
           <div class="flex-column">

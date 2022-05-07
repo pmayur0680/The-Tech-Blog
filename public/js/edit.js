@@ -23,11 +23,16 @@ const editFormHandler = async function(event) {
 
   //  call /api/post to delete user post
 const deleteClickHandler = async function() {
-  await fetch(`/api/post/${postId}`, {
+  const response = await fetch(`/api/post/${postId}`, {
     method: 'DELETE'
   });
-
-  document.location.replace('/dashboard');
+  
+  if (response.ok) {
+    document.location.replace('/dashboard/');
+  } else {
+    alert(response.statusText);
+  }
+  
 };
 
 // listen edit post form submit

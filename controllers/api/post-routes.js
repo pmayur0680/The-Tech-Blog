@@ -32,18 +32,18 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 // Delete user post. allowed to logged in user only
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {  
   try {
-    const [affectedRows] = Post.destroy({
+    const deletedPost = await Post.destroy({
       where: {
         id: req.params.id,
       },
     });
 
-    if (affectedRows > 0) {
-      res.status(200).end();
+    if (deletedPost) {
+      res.status(200).json({message: 'Post has been deleted.'});
     } else {
-      res.status(404).end();
+      res.status(404).json({message: 'Post not found!'});
     }
   } catch (err) {
     res.status(500).json(err);

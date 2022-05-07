@@ -2,8 +2,9 @@
     {{#each posts as |post|}}
     <div class="post card">
     <div class="card-header">
-        <div class="flex-row justify-space-between">
-        <div class="flex-column link-hand post-title" onclick="location.href='/post/{{id}}'">
+        <div class="flex-row justify-space-between link-hand" 
+            onclick="location.href='/post/{{id}}'">
+        <div class="flex-column link-hand post-title">
         {{title}}
         </div>
         <div class="flex-column post-description">
