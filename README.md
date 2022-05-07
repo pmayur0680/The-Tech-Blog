@@ -21,7 +21,7 @@ This application uses express-handlebars to implement Handlebars.js for Views, M
 Code Repo: https://github.com/pmayur0680/tech-blog<br>
 ### Screenshots
 ![Alt text](https://user-images.githubusercontent.com/101486770/167270244-38be8778-c88b-4ec8-adcf-9d4d1e77b0ce.png?raw=true "Tech Blog Home Page")<br><br>
-![Alt text](https://user-images.githubusercontent.com/101486770/167270289-f3c6d54a-3283-433d-9019-fce906831f89.png?raw=true "Tech Blog User Dashboard")<br><br>
+![Alt text](https://user-images.githubusercontent.com/101486770/167270374-cbb8bb73-f7db-43bc-aa6a-9f543e095af4.png?raw=true "Tech Blog User Dashboard")<br><br>
 ![Alt text](https://user-images.githubusercontent.com/101486770/167270299-83474c50-9415-4f43-b70f-63c17ef5bcb5.png?raw=true "Tech Blog User Dashboard")<br><br>
 
   ## License
