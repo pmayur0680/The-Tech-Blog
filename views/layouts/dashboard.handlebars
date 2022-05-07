@@ -22,23 +22,26 @@
   </header>
 
   <main class="col-auto">
-    {{!-- {{{body}}} --}}
+    {{!-- do not remove body, use for new/edit post --}}
+    {{{body}}}
+    {{!-- show posts on dashboard if not showing any form --}}
+    {{#if posts}}
     <ul class="list-group">
       {{#each posts as |post|}}
       <li class="list-item">
         <div class="flex-row justify-space-between">
-          <div class="flex-column">
-          {{title}}    
+          <div class="flex-column link-hand" onclick="location.href='/dashboard/edit/{{id}}'">
+          {{title}}
           </div>
           <div class="flex-column">
-          {{createdAt}}
+          {{format_date createdAt}}
           </div>
         </div>        
         
         </li>    
       {{/each}}
     </ul>
-    
+    {{/if}}
   </main>
 
   <footer class="footer flex-row justify-center">

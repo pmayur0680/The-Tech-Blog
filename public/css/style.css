@@ -70,6 +70,10 @@ input {
   color: var(--primary);
 }
 
+.link-hand{
+  cursor: pointer;
+}
+
 .btn {
   font-size: 1.3rem;
   text-decoration: none;
