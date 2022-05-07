@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post } = require('../models/');
 const withAuth = require('../utils/auth');
-
+// Route to show logged in user posts, rendered to all-posts-admin
 router.get('/', withAuth, async (req, res) => {  
   try {
     const postData = await Post.findAll({
@@ -20,12 +20,14 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+// Show new post form to logged in user only
 router.get('/new', withAuth, (req, res) => {  
   res.render('new-post', {    
     layout: 'dashboard',
   });
 });
 
+// Allow user to edit his/her post
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);

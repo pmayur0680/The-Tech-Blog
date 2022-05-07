@@ -188,6 +188,13 @@ input {
   padding: 1%;
 }
 
+.post-title {
+  font-weight: bold;
+}
+
+.post-description {
+  font-size: small;
+}
 /* FORM */
 .form-label,
 .form-input,

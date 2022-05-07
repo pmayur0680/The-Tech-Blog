@@ -1,3 +1,5 @@
+// attached to main-handlebars template
+  //  call /api/user/logout to destroy session and logged out user
 const logout = async function() {
   const response = await fetch('/api/user/logout', {
     method: 'POST',

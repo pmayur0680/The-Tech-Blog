@@ -1,11 +1,14 @@
+// attached to edit-post-handlebars template
 const postId = document.querySelector('input[name="post-id"]').value;
 
 const editFormHandler = async function(event) {
   event.preventDefault();
 
+    //  get user input form submitted
   const title = document.querySelector('input[name="post-title"]').value;
   const body = document.querySelector('textarea[name="post-body"]').value;
 
+  //  call /api/post to update user post
   await fetch(`/api/post/${postId}`, {
     method: 'PUT',
     body: JSON.stringify({
@@ -18,6 +21,7 @@ const editFormHandler = async function(event) {
   document.location.replace('/dashboard');
 };
 
+  //  call /api/post to delete user post
 const deleteClickHandler = async function() {
   await fetch(`/api/post/${postId}`, {
     method: 'DELETE'
@@ -26,9 +30,11 @@ const deleteClickHandler = async function() {
   document.location.replace('/dashboard');
 };
 
+// listen edit post form submit
 document
   .querySelector('#edit-post-form')
   .addEventListener('submit', editFormHandler);
+// listen edit post form delete button click
 document
   .querySelector('#delete-btn')
   .addEventListener('click', deleteClickHandler);

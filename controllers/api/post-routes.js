@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Save new post to database. allowed to logged in user only
 router.post('/', withAuth, async (req, res) => {
   const body = req.body;
   try {
@@ -12,8 +13,8 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// Update new post to database. allowed to logged in user only
 router.put('/:id', withAuth, async (req, res) => {  
-  console.log(`in updated ${req.params.id} = ${req.body}`)
   try {
     const [affectedRows] = await Post.update(req.body, {
       where: {
@@ -30,6 +31,7 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
+// Delete user post. allowed to logged in user only
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const [affectedRows] = Post.destroy({
