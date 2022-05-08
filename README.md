@@ -19,11 +19,7 @@ You can follow the steps below to install the application on your system.
 This application uses express-handlebars to implement Handlebars.js for Views, MySQL2, Sequelize to connect to MySQL database for Models, and Express.js for Controllers. It also uses dotenv package for environment variables, bcrypt package to hash passwords, and express-session with connect-session-sequelize to add authentication.
   ## Usage
 Code Repo: https://github.com/pmayur0680/tech-blog<br>
-### Screenshots
-![Alt text](https://user-images.githubusercontent.com/101486770/167270244-38be8778-c88b-4ec8-adcf-9d4d1e77b0ce.png?raw=true "Tech Blog Home Page")<br><br>
-![Alt text](https://user-images.githubusercontent.com/101486770/167270374-cbb8bb73-f7db-43bc-aa6a-9f543e095af4.png?raw=true "Tech Blog User Dashboard")<br><br>
-![Alt text](https://user-images.githubusercontent.com/101486770/167270299-83474c50-9415-4f43-b70f-63c17ef5bcb5.png?raw=true "Tech Blog User Dashboard")<br><br>
-
+Live Site: https://serene-ridge-42390.herokuapp.com/
   ## License
 Distributed under the MIT License.
   ## Contributing
